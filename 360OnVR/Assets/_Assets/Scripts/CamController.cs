@@ -21,19 +21,20 @@ public class CamController : MonoBehaviour {
 
     void Update()
     {
+        print(transform.eulerAngles.x);
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            if (transform.eulerAngles.x <= 70)
-            {
+            //if (transform.eulerAngles.x < 70)
+            //{
                 rotateItem(new Vector3(1, 0, 0), rotateSpeed);
-            }
+            //}
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            if (transform.eulerAngles.x >= -70)
-            {
+            //if (transform.eulerAngles.x > 270)
+            //{
                 rotateItem(-new Vector3(1, 0, 0), rotateSpeed);
-            }
+            //}
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -48,6 +49,6 @@ public class CamController : MonoBehaviour {
 
     public void rotateItem(Vector3 direction, float speed)
     {
-        transform.Rotate(direction, rotateSpeed * Time.deltaTime);
+        transform.Rotate(direction, speed * Time.deltaTime);
     }
 }
