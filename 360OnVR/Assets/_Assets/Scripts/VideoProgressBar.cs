@@ -23,13 +23,11 @@ public class VideoProgressBar : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     private void Update()
     {
-        print(videoPlayer.frame);
         if (videoPlayer.frameCount > 0)
         {
             progress.fillAmount = (float)videoPlayer.frame / (float)videoPlayer.frameCount;
         }
     }
-
 
     public void OnDrag(PointerEventData eventData)
     {

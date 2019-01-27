@@ -9,7 +9,6 @@ public class CamController : MonoBehaviour {
 
     void Update()
     {
-        print(transform.eulerAngles.x);
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rotateItem(-new Vector3(1, 0, 0), rotateSpeed);
@@ -25,8 +24,7 @@ public class CamController : MonoBehaviour {
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rotateItem(new Vector3(0, 1, 0), rotateSpeed);
-        }
-            
+        }  
     }
 
     public void rotateItem(Vector3 direction, float speed)
