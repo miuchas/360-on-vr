@@ -30,7 +30,6 @@ public class CamController : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            print(transform.rotate.x);
             if (transform.eulerAngles.x >= -70)
             {
                 rotateItem(-new Vector3(1, 0, 0), rotateSpeed);
