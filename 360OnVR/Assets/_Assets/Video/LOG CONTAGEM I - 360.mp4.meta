@@ -13,7 +13,7 @@ VideoClipImporter:
   deinterlace: 0
   encodeAlpha: 0
   flipVertical: 0
-  flipHorizontal: 1
+  flipHorizontal: 0
   importAudio: 1
   targetSettings:
     0:
