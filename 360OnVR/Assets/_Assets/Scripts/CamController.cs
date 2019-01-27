@@ -7,42 +7,24 @@ public class CamController : MonoBehaviour {
     public float limit_top = 70f;
     public float limit_donw = 70f;
 
-    public bool up = false;
-    public bool down = false;
-    public bool left = false;
-    public bool right = false;
-    
-
-
-    void start()
-    {
-
-    }
-
     void Update()
     {
         print(transform.eulerAngles.x);
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            //if (transform.eulerAngles.x < 70)
-            //{
-                rotateItem(new Vector3(1, 0, 0), rotateSpeed);
-            //}
+            rotateItem(-new Vector3(1, 0, 0), rotateSpeed);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            //if (transform.eulerAngles.x > 270)
-            //{
-                rotateItem(-new Vector3(1, 0, 0), rotateSpeed);
-            //}
+            rotateItem(new Vector3(1, 0, 0), rotateSpeed);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rotateItem(Vector3.up, -rotateSpeed);
+            rotateItem(new Vector3(0, 1, 0), -rotateSpeed);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            rotateItem(Vector3.up, rotateSpeed);
+            rotateItem(new Vector3(0, 1, 0), rotateSpeed);
         }
             
     }

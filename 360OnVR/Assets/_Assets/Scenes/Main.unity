@@ -159,7 +159,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: a9df3c8090c23884aa561b195074407d, type: 2}
     - target: {fileID: 4642148922954212, guid: ecbf41d9dd291664aaeff7e2ff304f74, type: 2}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbf41d9dd291664aaeff7e2ff304f74, type: 2}
@@ -537,9 +537,9 @@ VideoPlayer:
   m_AspectRatio: 3
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 1270020589}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
