@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour {
     public float rotateSpeed = 50f;
-    public float limit_top = 70f;
-    public float limit_donw = 70f;
 
     void Update()
     {

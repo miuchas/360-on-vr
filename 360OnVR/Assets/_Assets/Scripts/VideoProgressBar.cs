@@ -59,13 +59,13 @@ public class VideoProgressBar : MonoBehaviour, IDragHandler, IPointerDownHandler
 
         //0 - apresentação
         //400 - diferenciais
-        //1000 - localização
-        //1540 - segurança
-        //2000 - administração
-        //2340 - restaurante
-        //2700 - area externa
-        //3340 - mezanino
-        //4100 - area interna
+        //1040 - localização
+        //1600 - segurança
+        //2040 - administração
+        //2390 - restaurante
+        //2780 - estacionamento
+        //3650 - mezanino
+        //4130 - area interna
         //4500 - finalização
         //5400
     }
