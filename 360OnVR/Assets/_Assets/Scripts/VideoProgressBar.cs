@@ -51,9 +51,11 @@ public class VideoProgressBar : MonoBehaviour, IDragHandler, IPointerDownHandler
         }
     }
 
-    private void SkipToPercent(float pct)
+    public void SkipToPercent(float pct)
     {
         var frame = videoPlayer.frameCount * pct;
         videoPlayer.frame = (long)frame;
+
+        Debug.Log(videoPlayer.frame);
     }
 }
