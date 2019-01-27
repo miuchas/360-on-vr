@@ -2,31 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamController : MonoBehaviour {
+public class CamController : MonoBehaviour
+{
+    [SerializeField] private Transform pivot;
+    [SerializeField] private Transform Cam;
     public float rotateSpeed = 50f;
 
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            rotateItem(-new Vector3(1, 0, 0), rotateSpeed);
+            rotateItem(pivot, -new Vector3(1, 0, 0), rotateSpeed);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            rotateItem(new Vector3(1, 0, 0), rotateSpeed);
+            rotateItem(pivot, new Vector3(1, 0, 0), rotateSpeed);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rotateItem(new Vector3(0, 1, 0), -rotateSpeed);
+            rotateItem(Cam, new Vector3(0, 1, 0), -rotateSpeed);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            rotateItem(new Vector3(0, 1, 0), rotateSpeed);
-        }  
+            rotateItem(Cam, new Vector3(0, 1, 0), rotateSpeed);
+        }
     }
 
-    public void rotateItem(Vector3 direction, float speed)
+    public void rotateItem(Transform root, Vector3 direction, float speed)
     {
-        transform.Rotate(direction, speed * Time.deltaTime);
+        root.Rotate(direction, speed * Time.deltaTime);
     }
 }
