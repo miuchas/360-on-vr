@@ -5,40 +5,38 @@ using UnityEngine.UI;
 
 public class TransitionImage : MonoBehaviour
 {
-    public Image transitionImage;
-    [SerializeField] float speed = 2;
-    public Color newColor;
-    [SerializeField] bool doIt;
-    [SerializeField] bool fadeOut = false;
-
-    private void Update()
+    [SerializeField] Animator anim;
+    [SerializeField] List<GameObject> mount = new List<GameObject>();
+    [SerializeField] int index = 0;
+    bool backImage = false;
+    
+    public void NextImage()
     {
-        if (doIt)
+        index++;
+        if (index >= mount.Count - 1) { index = mount.Count - 1; }
+        anim.Play("Fade");
+    }
+
+    public void BackImage()
+    {
+        index--;
+        if (index <= 0)  { index = 0; }
+        backImage = true;
+        anim.Play("Fade");
+    }
+
+    public void ActiveObject()
+    {
+        if (backImage)
         {
-            if (fadeOut)
-            {
-                FadeOutTransition();
-            }
-            else
-            {
-                FadeInTransition();
-            }
+            mount[index + 1].SetActive(false);
+            mount[index].SetActive(true);
+            backImage = false;
         }
-    }
-
-    void FadeInTransition()
-    {
-        float value = transitionImage.color.a;
-        value -= Time.deltaTime * speed;
-        newColor.a = value;
-        transitionImage.color = newColor;
-    }
-
-    void FadeOutTransition()
-    {
-        float value = transitionImage.color.a;
-        value += Time.deltaTime * speed;
-        newColor.a = value;
-        transitionImage.color = newColor;
+        else
+        {
+            mount[index - 1].SetActive(false);
+            mount[index].SetActive(true);
+        }
     }
 }
