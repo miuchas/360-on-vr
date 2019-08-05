@@ -23,13 +23,16 @@ namespace Assets._Assets.Scripts
 
         void MoveCamera()
         {
-            rotationX += Input.GetAxis("Mouse X") * sensitiveX * rotationSpeed * Time.deltaTime; 
-            rotationY += Input.GetAxis("Mouse Y") * sensitiveY * rotationSpeed * Time.deltaTime;
+            if (Input.GetMouseButtonDown(0))
+            {
+                rotationX += Input.GetAxis("Mouse X") * sensitiveX * rotationSpeed * Time.deltaTime;
+                rotationY += Input.GetAxis("Mouse Y") * sensitiveY * rotationSpeed * Time.deltaTime;
 
-            rotationX = Mathf.Clamp(rotationX, minimunX, maximunX);
-            rotationY = Mathf.Clamp(rotationY, minimunY, maximunY);
+                rotationX = Mathf.Clamp(rotationX, minimunX, maximunX);
+                rotationY = Mathf.Clamp(rotationY, minimunY, maximunY);
 
-            cam.transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+                cam.transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            }
         }
     }
 }
